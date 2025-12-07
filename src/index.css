@@ -15,6 +15,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'LiAlinurAbakasUnicode';
+  src: url('/fonts/Li Alinur Abakas Unicode.ttf') format('truetype');
+  font-display: swap;
+}
+
 :root {
   --color-bg-cream: #FEFFF6;
   --color-brand-orange: #FFA46F;
@@ -32,7 +38,7 @@
   --color-charcoal: #333333;
   --color-white: #FFFFFF;
 
-  --font-family-header: 'CodepotroAbuSayed', system-ui, sans-serif;
+  --font-family-header: 'LiAlinurAbakasUnicode', 'CodepotroAbuSayed', system-ui, sans-serif;
   --font-family-body: 'FNMahinRafid', system-ui, sans-serif;
   --font-family-space-grotesk: var(--font-family-body);
   /* Override existing font var to use new body font */

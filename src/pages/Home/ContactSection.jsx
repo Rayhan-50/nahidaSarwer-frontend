@@ -50,16 +50,16 @@ const ContactSection = () => {
             <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10">
 
                 {/* Header */}
-                <div className="text-center mb-20">
-                    <span className="text-[#00A651] font-header text-4xl font-bold mb-4 block">
+                <div className="text-center mb-10 lg:mb-20">
+                    <span className="text-[#00A651] font-header text-2xl md:text-3xl lg:text-4xl font-bold mb-4 block">
                         যোগাযোগ
                     </span>
                     <TypingText
                         tag="h2"
                         text="আমাদের সাথে যোগাযোগ করুন"
-                        className="text-6xl md:text-8xl lg:text-9xl font-header font-bold text-black mb-6"
+                        className="text-4xl md:text-6xl lg:text-8xl font-header font-bold text-black mb-6"
                     />
-                    <p className="text-2xl md:text-3xl text-black font-body">
+                    <p className="text-lg md:text-xl lg:text-2xl text-black font-body">
                         আপনার প্রশ্ন, পরামর্শ বা যেকোনো বিষয়ে আমাদের সাথে যোগাযোগ করতে পারেন।
                     </p>
                 </div>
@@ -67,22 +67,22 @@ const ContactSection = () => {
                 {/* Contact Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-black/10 border-t border-black/10">
                     {contactItems.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center text-center p-10 group hover:bg-white/50 transition-colors duration-300">
-                            <div className="mb-6">
+                        <div key={index} className="flex flex-col items-center text-center p-6 md:p-10 group hover:bg-white/50 transition-colors duration-300">
+                            <div className="mb-3 md:mb-6">
                                 <item.icon strokeWidth={1.5} className="w-12 h-12 text-black" />
                             </div>
 
-                            <h3 className="text-5xl font-header font-bold text-black mb-6">
+                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-header font-bold text-black mb-3 md:mb-6">
                                 {item.title}
                             </h3>
 
-                            <p className="text-2xl text-gray-600 font-body mb-8 min-h-[4rem]">
+                            <p className="text-base md:text-lg lg:text-xl text-gray-600 font-body mb-4 md:mb-8 min-h-0 md:min-h-[4rem]">
                                 {item.subtitle}
                             </p>
 
                             <a
                                 href={item.href}
-                                className="text-3xl font-bold text-black border-b-2 border-black pb-1 hover:text-[#FF4D50] hover:border-[#FF4D50] transition-colors"
+                                className="text-lg md:text-xl lg:text-2xl font-bold text-black border-b-2 border-black pb-1 hover:text-[#FF4D50] hover:border-[#FF4D50] transition-colors"
                             >
                                 {item.link}
                             </a>

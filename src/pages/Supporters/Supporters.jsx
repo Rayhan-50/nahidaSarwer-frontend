@@ -252,28 +252,28 @@ const Supporters = () => {
 
             {/* Featured Voice / Video Embed Section */}
             <section
-                className="py-10 md:py-20 relative overflow-hidden bg-cover bg-center"
+                className="py-10 md:py-16 lg:py-20 relative overflow-hidden bg-cover bg-center"
                 style={{ backgroundImage: `url(${frame24})` }}
             >
 
-                <div className="absolute inset-0 bg-black/30"></div> {/* Added overlay for better text visibility */}
+                <div className="absolute inset-0 bg-black/50"></div> {/* Increased overlay darkness for better text visibility */}
                 <div className="w-full relative z-10">
-                    <div className="flex items-center gap-2 mb-6 md:mb-8 text-white font-bold text-lg md:text-xl justify-center">
-                        <span className="w-6 h-6 md:w-8 md:h-8 bg-[#FF4D50] rounded-full flex items-center justify-center text-white text-xs md:text-sm">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="md:w-4 md:h-4">
+                    <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6 md:mb-8 text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl justify-center px-4">
+                        <span className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-[#FF4D50] rounded-full flex items-center justify-center text-white text-xs">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="sm:w-3.5 sm:h-3.5 md:w-4 md:h-4">
                                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                             </svg>
                         </span>
                         Featured Voice
                     </div>
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-header font-bold mb-8 md:mb-12 text-center text-white">জনগণের কথা</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-header font-bold mb-6 sm:mb-8 md:mb-12 text-center text-white px-4">জনগণের কথা</h2>
 
                     <div className="relative">
                         {/* Mobile View: Manual Scroll */}
-                        <div className="md:hidden flex overflow-x-auto gap-4 px-4 pb-8 snap-x snap-mandatory no-scrollbar">
+                        <div className="md:hidden flex overflow-x-auto gap-3 sm:gap-4 px-3 sm:px-4 pb-6 sm:pb-8 snap-x snap-mandatory no-scrollbar">
                             {videos.map((video, index) => (
-                                <div key={index} className="min-w-[85vw] bg-white p-6 rounded-[1.5rem] shadow-xl border border-gray-100 flex flex-col h-full snap-center">
-                                    <div className="aspect-video w-full rounded-xl overflow-hidden mb-4 bg-black flex-shrink-0">
+                                <div key={index} className="min-w-[90vw] sm:min-w-[85vw] bg-white p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 flex flex-col h-full snap-center">
+                                    <div className="aspect-video w-full rounded-lg sm:rounded-xl overflow-hidden mb-3 sm:mb-4 bg-black flex-shrink-0 relative z-0">
                                         <iframe
                                             width="100%"
                                             height="100%"
@@ -284,12 +284,12 @@ const Supporters = () => {
                                             allowFullScreen
                                         ></iframe>
                                     </div>
-                                    <div className="flex items-start gap-3 flex-grow">
-                                        <div className="w-10 h-10 bg-gray-200 rounded-full flex-shrink-0"></div>
-                                        <div>
-                                            <h3 className="text-xl font-bold mb-1">{video.name}</h3>
-                                            <p className="text-gray-500 text-base mb-2">{video.location}</p>
-                                            <p className="text-lg text-gray-800 leading-relaxed">
+                                    <div className="flex items-start gap-2 sm:gap-3 flex-grow">
+                                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-200 rounded-full flex-shrink-0"></div>
+                                        <div className="flex-1 min-w-0">
+                                            <h3 className="text-base sm:text-lg md:text-xl font-bold mb-0.5 sm:mb-1 text-black truncate">{video.name}</h3>
+                                            <p className="text-gray-500 text-sm sm:text-base mb-1.5 sm:mb-2 truncate">{video.location}</p>
+                                            <p className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed line-clamp-3 break-words">
                                                 "{video.quote}"
                                             </p>
                                         </div>
@@ -310,8 +310,8 @@ const Supporters = () => {
                                 }}
                             >
                                 {[...videos, ...videos].map((video, index) => (
-                                    <div key={index} className="w-[450px] lg:w-[600px] bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 flex-shrink-0 flex flex-col h-full">
-                                        <div className="aspect-video w-full rounded-2xl overflow-hidden mb-8 bg-black flex-shrink-0">
+                                    <div key={index} className="w-[350px] md:w-[400px] lg:w-[500px] xl:w-[600px] bg-white p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-[2rem] shadow-xl border border-gray-100 flex-shrink-0 flex flex-col">
+                                        <div className="aspect-video w-full rounded-xl md:rounded-2xl overflow-hidden mb-5 sm:mb-6 md:mb-8 bg-black flex-shrink-0 relative z-0">
                                             <iframe
                                                 width="100%"
                                                 height="100%"
@@ -322,12 +322,12 @@ const Supporters = () => {
                                                 allowFullScreen
                                             ></iframe>
                                         </div>
-                                        <div className="flex items-start gap-4 flex-grow">
-                                            <div className="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
-                                            <div>
-                                                <h3 className="text-2xl font-bold mb-1">{video.name}</h3>
-                                                <p className="text-gray-500 text-lg mb-4">{video.location}</p>
-                                                <p className="text-xl text-gray-800 leading-relaxed">
+                                        <div className="flex items-start gap-3 sm:gap-4 flex-grow">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
+                                            <div className="flex-1 min-w-0">
+                                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-black truncate">{video.name}</h3>
+                                                <p className="text-gray-500 text-base sm:text-lg mb-3 sm:mb-4 truncate">{video.location}</p>
+                                                <p className="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed line-clamp-4 break-words">
                                                     "{video.quote}"
                                                 </p>
                                             </div>

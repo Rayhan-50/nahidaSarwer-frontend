@@ -53,13 +53,13 @@ const MilestoneSection = () => {
 
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <span className="text-[#00A651] font-bold text-4xl mb-4 block">অগ্রগতি</span>
+                    <span className="text-[#00A651] font-bold text-2xl sm:text-3xl md:text-4xl mb-4 block">অগ্রগতি</span>
                     <TypingText
                         tag="h2"
                         text="আমাদের যাত্রা এবং মাইলফলক"
-                        className="text-6xl md:text-8xl lg:text-9xl font-header font-bold text-black mb-6"
+                        className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-header font-bold text-black mb-6"
                     />
-                    <p className="text-3xl md:text-4xl lg:text-5xl text-black/70 font-body max-w-5xl mx-auto leading-relaxed">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-black/70 font-body max-w-5xl mx-auto leading-relaxed">
                         প্রতিটি পদক্ষেপ মানুষের হৃদয়ের দিকে এগিয়ে নিয়ে যায় আমাদের। <br />
                         বিশ্বাস করি ধৈর্য ও নিষ্ঠার মাধ্যমে সবকিছু সম্ভব।
                     </p>
@@ -89,24 +89,24 @@ const MilestoneSection = () => {
 
                                 {/* Card */}
                                 <div className="w-full lg:w-1/2 relative group">
-                                    <div className="bg-[#F4A261] p-8 md:p-10 rounded-[2.5rem] border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-300">
+                                    <div className="bg-[#F4A261] p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-300">
 
                                         {/* Header Content */}
                                         <div className="mb-8">
-                                            <span className="text-4xl font-bold text-black mb-2 block">{item.year}</span>
-                                            <h3 className="text-5xl md:text-7xl font-header font-bold text-black mb-4">
+                                            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2 block">{item.year}</span>
+                                            <h3 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-header font-bold text-black mb-4">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-2xl md:text-3xl text-black/80 font-body leading-relaxed mb-6">
+                                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-black/80 font-body leading-relaxed mb-4 sm:mb-6">
                                                 {item.description}
                                             </p>
-                                            <button className="px-6 py-2 border border-black rounded-full text-sm font-bold hover:bg-black hover:text-white transition-colors">
+                                            <button className="px-4 py-1.5 sm:px-6 sm:py-2 border border-black rounded-full text-xs sm:text-sm font-bold hover:bg-black hover:text-white transition-colors">
                                                 আরও জানুন ›
                                             </button>
                                         </div>
 
                                         {/* Image */}
-                                        <div className="relative overflow-hidden rounded-3xl h-64 md:h-80 w-full">
+                                        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl h-48 sm:h-56 md:h-64 lg:h-80 w-full">
                                             <img
                                                 src={item.image}
                                                 alt={item.title}

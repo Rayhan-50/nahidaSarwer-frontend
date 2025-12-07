@@ -108,10 +108,10 @@ const CommunitySection = () => {
                     <TypingText
                         tag="h2"
                         text="সমর্থন এবং সম্প্রদায়ের শক্তি"
-                        className="text-6xl md:text-8xl lg:text-9xl font-header font-bold text-[#00A651] leading-tight max-w-2xl"
+                        className="text-4xl md:text-5xl lg:text-7xl font-header font-bold text-[#00A651] leading-tight max-w-2xl"
                     />
 
-                    <p className="text-3xl md:text-4xl lg:text-5xl text-white font-body leading-relaxed max-w-3xl text-right lg:text-right">
+                    <p className="text-xl md:text-2xl lg:text-3xl text-white font-body leading-relaxed max-w-3xl text-right lg:text-right">
                         নিভার প্রচারণা হাজারো মানুষের আস্থা অর্জন করেছে। <br className="hidden lg:block" />
                         প্রতিদিন নতুন সমর্থক যুক্ত হচ্ছেন এই মহৎ উদ্যোগে। <br className="hidden lg:block" />
                         ঢাকা-১২ এর প্রতিটি কোণ থেকে মানুষ তাদের কণ্ঠস্বর <br className="hidden lg:block" />
@@ -130,18 +130,18 @@ const CommunitySection = () => {
                             <div className="absolute inset-0 bg-[#00A651] transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out z-0"></div>
 
                             <div className="relative z-10 flex flex-col h-full justify-between">
-                                <h3 className="text-2xl md:text-3xl font-header font-bold text-white mb-4 group-hover:text-white transition-colors duration-500">
+                                <h3 className="text-xl md:text-2xl font-header font-bold text-white mb-4 group-hover:text-white transition-colors duration-500">
                                     {stat.title}
                                 </h3>
 
                                 <div className="flex-grow flex items-center justify-center">
-                                    <span className="text-6xl md:text-7xl lg:text-8xl font-header font-bold text-white group-hover:text-white transition-colors duration-500">
+                                    <span className="text-4xl md:text-5xl lg:text-6xl font-header font-bold text-white group-hover:text-white transition-colors duration-500">
                                         <Counter value={stat.value} suffix={stat.suffix} />
                                     </span>
                                 </div>
 
                                 <div className="border-t border-white/30 pt-6 mt-4 group-hover:border-white/50 transition-colors duration-500">
-                                    <p className="text-lg md:text-xl text-white/80 font-body text-center group-hover:text-white transition-colors duration-500">
+                                    <p className="text-base md:text-lg text-white/80 font-body text-center group-hover:text-white transition-colors duration-500">
                                         {stat.description}
                                     </p>
                                 </div>

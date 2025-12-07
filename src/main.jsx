@@ -22,19 +22,18 @@ import { router } from './Routes/Routes';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
+import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from './Providers/AuthProvider';
 
-import SmoothCursor from './components/ui/SmoothCursor';
+
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <AuthProvider>
-      <div className="cursor-none">
-        <SmoothCursor />
-        <QueryClientProvider client={queryClient}> 
+      <div>
+        <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
           <ToastContainer position="top-center" autoClose={3000} />
         </QueryClientProvider>

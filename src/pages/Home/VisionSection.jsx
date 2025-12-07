@@ -43,12 +43,12 @@ const VisionSection = () => {
 
                     {/* Left Column - Sticky Content */}
                     <div className="lg:sticky lg:top-32">
-                        <span className="text-[#00A651] font-bold text-3xl md:text-5xl mb-4 md:mb-6 block">লক্ষ্য</span>
-                        <div className="text-5xl md:text-7xl lg:text-8xl font-header font-bold text-black leading-tight mb-6 md:mb-8">
+                        <span className="text-[#00A651] font-bold text-xl md:text-2xl text-3xl md:text-5xl mb-4 md:mb-6 block">লক্ষ্য</span>
+                        <div className="text-3xl md:text-5xl lg:text-7xl font-header font-bold text-black leading-tight mb-6 md:mb-8">
                             <TypingText tag="h2" text="আমাদের দৃষ্টিভঙ্গি" />
                             <TypingText tag="h2" text="স্পষ্ট" />
                         </div>
-                        <p className="text-xl md:text-4xl lg:text-5xl text-black/80 font-body leading-relaxed mb-8 md:mb-12 max-w-2xl">
+                        <p className="text-lg md:text-xl lg:text-2xl text-black/80 font-body leading-relaxed mb-8 md:mb-12 max-w-2xl">
                             ঢাকা-১২ কে আধুনিক, সুশৃঙ্খল ও উন্নত নগরী হিসেবে গড়ে তোলা আমাদের প্রধান লক্ষ্য।
                         </p>
 
@@ -72,10 +72,10 @@ const VisionSection = () => {
                                     <div className="w-10 h-10 md:w-12 md:h-12 mb-4 md:mb-6 text-black group-hover:text-white transition-colors duration-500">
                                         <card.icon size={40} className="md:w-12 md:h-12" strokeWidth={1.5} />
                                     </div>
-                                    <h3 className="text-2xl md:text-4xl font-header font-bold text-black group-hover:text-white transition-colors duration-500 mb-2 md:mb-4">
+                                    <h3 className="text-xl md:text-3xl font-header font-bold text-black group-hover:text-white transition-colors duration-500 mb-2 md:mb-4">
                                         {card.title}
                                     </h3>
-                                    <p className="text-lg md:text-2xl text-black/70 group-hover:text-white/90 transition-colors duration-500 font-body leading-relaxed">
+                                    <p className="text-base md:text-lg text-black/70 group-hover:text-white/90 transition-colors duration-500 font-body leading-relaxed">
                                         {card.description}
                                     </p>
                                 </div>
