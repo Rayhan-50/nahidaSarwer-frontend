@@ -18,7 +18,7 @@ import frame19 from '../../assets/images/section_2/frame_19.png';
 import nivaPoster from '../../assets/images/section_2/niva_poster.png';
 import nivaPortrait1 from '../../assets/images/section_2/niva_portrait_1.png';
 import image1 from '../../assets/images/section_2/image1.jpeg';
-
+import img from '../../assets/images/img.jpg'
 const TextWithReadMore = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const text = "নিভা ঢাকা ইউনিভার্সিটির মাইক্রোবায়োলজি ডিপার্টমেন্ট থেকে অনার্স ও মাস্টার্স শেষ করেন। দীর্ঘদিন গবেষণার কাজে যুক্ত ছিলেন icddrb তে। ছোটবেলা থেকেই রাজনৈতিক কালচারের সাথে পরিচয়। ভার্সিটি জীবনে প্রায় সকল ধরণের আন্দোলনে যুক্ত ছিলেন। ২০১৮ এর কোটা আন্দোলন, নিরাপদ সড়ক আন্দোলন থেকে ছোটখাটো আরো শ-খানেক আন্দোলন, যা ২০২৪ এর জুলাই গণঅভ্যুত্থানের ভিত্তি তৈরী করে প্রায় তার সবগুলোতেই যুক্ত ছিলেন। গুরুতপূর্ন ভূমিকা রেখেছেন জুলাই গণঅভ্যুত্থানেও";
@@ -182,7 +182,7 @@ const Home = () => {
                 <div className="w-full sm:w-1/2 relative group">
                   <div className="absolute inset-0 bg-[#F4A261] rounded-[2rem] transform translate-x-3 translate-y-3 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"></div>
                   <img
-                    src={nivaPortrait1}
+                    src={img}
                     alt="Nahida Sarwar Niva Portrait 1"
                     className="relative w-full aspect-square object-cover rounded-[2rem] border-4 border-white z-10"
                   />
