@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Send, MessageSquare, AlertCircle, ThumbsUp, ArrowRight, ChevronRight } from 'lucide-react';
-import useAxiosPublic from '../../hooks/UseAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 
 import { motion } from 'framer-motion';
