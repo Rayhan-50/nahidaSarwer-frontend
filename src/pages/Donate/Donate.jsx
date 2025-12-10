@@ -24,7 +24,12 @@ const Donate = () => {
     const [isSuccess, setIsSuccess] = useState(false);
     const axiosPublic = useAxiosPublic();
 
-    const presetAmounts = ['১০০', '৫০০', '১,০০০', '৫,০০০'];
+    const presetAmounts = [
+        { value: 100, label: '১০০' },
+        { value: 500, label: '৫০০' },
+        { value: 1000, label: '১,০০০' },
+        { value: 5000, label: '৫,০০০' }
+    ];
 
     const handleAmountSelect = (val) => {
         setAmount(val);
@@ -50,8 +55,11 @@ const Donate = () => {
         const finalAmount = customAmount || amount;
 
         if (!finalAmount) newErrors.amount = 'অনুগ্রহ করে অনুদানের পরিমাণ নির্বাচন করুন বা লিখুন';
-        else if (isNaN(parseFloat(finalAmount.replace(/,/g, ''))) || parseFloat(finalAmount.replace(/,/g, '')) <= 0) {
-            newErrors.amount = 'অনুগ্রহ করে সঠিক পরিমাণ লিখুন';
+        else {
+            const amtString = String(finalAmount).replace(/,/g, '');
+            if (isNaN(parseFloat(amtString)) || parseFloat(amtString) <= 0) {
+                newErrors.amount = 'অনুগ্রহ করে সঠিক পরিমাণ লিখুন';
+            }
         }
 
         if (!formData.name.trim()) newErrors.name = 'আপনার নাম আবশ্যক';
@@ -188,16 +196,16 @@ const Donate = () => {
                                     অনুদানের পরিমাণ
                                 </h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-8 mb-6 md:mb-10">
-                                    {presetAmounts.map((amt) => (
+                                    {presetAmounts.map((item) => (
                                         <button
-                                            key={amt}
-                                            onClick={() => handleAmountSelect(amt)}
-                                            className={`py-4 md:py-8 rounded-xl md:rounded-2xl font-bold text-xl md:text-4xl transition-all ${amount === amt
+                                            key={item.value}
+                                            onClick={() => handleAmountSelect(item.value)}
+                                            className={`py-4 md:py-8 rounded-xl md:rounded-2xl font-bold text-xl md:text-4xl transition-all ${amount === item.value
                                                 ? 'bg-[#FF4D50] text-white shadow-lg scale-105'
                                                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                                 }`}
                                         >
-                                            ৳ {amt}
+                                            ৳ {item.label}
                                         </button>
                                     ))}
                                 </div>
@@ -384,6 +392,11 @@ const Donate = () => {
                                             <p className="font-bold text-gray-700 text-xl md:text-3xl">
                                                 QR কোড স্ক্যান করে <span className="text-[#FF4D50]">{getPaymentMethodName(paymentMethod)}</span> এ পেমেন্ট করুন
                                             </p>
+                                            {paymentMethod === 'bkash' && (
+                                                <p className="text-lg md:text-xl font-bold text-gray-800 mt-2">
+                                                    বিকাশ পার্সোনাল: <span className="text-[#E2136E]">01852743060</span>
+                                                </p>
+                                            )}
                                         </>
                                     )}
                                 </div>
