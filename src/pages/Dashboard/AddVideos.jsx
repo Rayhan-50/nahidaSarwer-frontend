@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
-import useAxiosPublic from '../../hooks/UseAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import { Trash2, Edit, Video, MapPin, User, Quote, Plus } from 'lucide-react';

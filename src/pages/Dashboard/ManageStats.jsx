@@ -4,7 +4,7 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import Loading from '../../components/Loading/Loading';
 import { BarChart3, Save, TrendingUp, Users, DollarSign } from 'lucide-react';
-import useAxiosPublic from '../../hooks/UseAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const ManageStats = () => {
     const axiosSecure = useAxiosSecure();

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Star, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import TypingText from '../../Shared/TypingText';
-import useAxiosPublic from '../../hooks/UseAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 import frame21 from '../../assets/images/commnet/frame_21.png';
 import frame24 from '../../assets/images/supporter_img/frame_24.png';

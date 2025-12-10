@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const bkashQr = "https://res.cloudinary.com/duh7c5x99/image/upload/v1765358194/513d55a7-4156-4bd8-86fd-34c2e255a99c_e4xn0m.jpg";
 import rocketQr from '../../assets/images/payment/rocket.jpg';
 import nagadQr from '../../assets/images/payment/nagad.png';
-import useAxiosPublic from '../../hooks/UseAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const Donate = () => {
     const [amount, setAmount] = useState('');

@@ -11,7 +11,7 @@ import SocialLogin from "../components/SocialLogin";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { getAuth, signOut } from 'firebase/auth';
 import { AuthContext } from "../Providers/AuthProvider";
-import useAxiosPublic from "../hooks/UseAxiosPublic";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 import frame16 from "../assets/frame_16.svg";
 
 

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useMotionValue, animate } from 'framer-motion';
 import TypingText from '../../Shared/TypingText';
-import useAxiosPublic from '../../hooks/UseAxiosPublic';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 import frame20 from '../../assets/images/3rd/frame_20.png';
 
