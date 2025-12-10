@@ -1,41 +1,45 @@
 import React, { useState, useEffect, useRef } from 'react';
 import TypingText from '../../Shared/TypingText';
 
-import img1202 from '../../assets/images/3rd/img_1202.jpg';
+import img0648 from '../../assets/images/long_/img_0648.jpg';
+import image1457 from '../../assets/images/long_/image_1457.jpg';
+import lfs05457 from '../../assets/images/long_/lfs05457.jpg';
+import whatsappImage from '../../assets/images/long_/whatsapp_image.jpeg';
 import frame20 from '../../assets/images/3rd/frame_20.png';
 
 const JourneySection = ({ scrollContainerRef }) => {
+    console.log("JourneySection loaded. Active Index:", 0);
     const [activeIndex, setActiveIndex] = useState(0);
     const sectionRef = useRef(null);
 
     const slides = [
         {
             id: '০১',
-            verticalText: 'শিক্ষার ভিত্তি',
-            title: 'জ্ঞানের সাথে এগিয়ে যাওয়া',
-            description: 'নিভা উচ্চশিক্ষায় অর্জন করেছেন এবং সমাজের প্রতি দায়বদ্ধতা শিখেছেন প্রতিটি প্রতিষ্ঠানে।',
-            image: img1202
+            verticalText: 'কোটা আন্দোলন',
+            title: '২০১৮ কোটা আন্দোলন',
+            description: 'ছাত্র-জনতার ন্যায্য অধিকার আদায়ে কোটা সংস্কার আন্দোলন।',
+            image: img0648
         },
         {
             id: '০২',
-            verticalText: 'সামাজিক প্রতিবাদ',
-            title: 'অন্যায়ের বিরুদ্ধে প্রতিবাদ',
-            description: 'সমাজের নানা অসঙ্গতি ও অন্যায়ের বিরুদ্ধে তিনি সর্বদা সোচ্চার থেকেছেন এবং সাধারণ মানুষের অধিকার আদায়ে কাজ করেছেন।',
-            image: img1202
+            verticalText: 'নিরাপদ সড়ক',
+            title: '২০১৮ নিরাপদ সড়ক আন্দোলন',
+            description: 'সড়কে শৃঙ্খলা ও নিরাপত্তার দাবিতে শিক্ষার্থীদের আন্দোলন।',
+            image: image1457
         },
         {
             id: '০৩',
-            verticalText: 'জুলাই মাইলফলক',
-            title: 'জুলাই বিপ্লবের চেতনা',
-            description: 'জুলাই বিপ্লবে তার সক্রিয় অংশগ্রহণ এবং নেতৃত্ব তাকে নতুন উচ্চতায় নিয়ে গেছে। তিনি ছিলেন আন্দোলনের সম্মুখভাগে।',
-            image: img1202
+            verticalText: 'করোনাকাল',
+            title: '২০২০ করোনায় মানুষের পাশে',
+            description: 'মহামারীর কঠিন সময়ে অসহায় মানুষের পাশে দাঁড়িয়েছেন নিরলসভাবে।',
+            image: lfs05457
         },
         {
             id: '০৪',
-            verticalText: 'রাজনৈতিক সেবা',
-            title: 'জনগণের সেবায় রাজনীতি',
-            description: 'রাজনীতিকে তিনি মানুষের সেবা করার একটি মহৎ মাধ্যম হিসেবে বেছে নিয়েছেন এবং নিরলসভাবে কাজ করে যাচ্ছেন।',
-            image: img1202
+            verticalText: 'গণঅভ্যুত্থান',
+            title: '২০২৪ জুলাই গণঅভ্যুত্থান',
+            description: 'স্বৈরাচার পতনে ছাত্র-জনতার সাথে একাত্ম হয়ে রাজপথে সোচ্চার ভূমিকা।',
+            image: whatsappImage
         }
     ];
 
@@ -92,7 +96,7 @@ const JourneySection = ({ scrollContainerRef }) => {
                         <span className="text-[#00A651] font-bold text-sm sm:text-base md:text-xl lg:text-2xl bg-white/10 px-3 py-1 sm:px-4 sm:py-1 md:px-6 md:py-2 rounded inline-block mb-3 sm:mb-4 md:mb-6">যাত্রা</span>
                         <TypingText
                             tag="h2"
-                            text="নিভার পথচলা এবং প্রতিশ্রুতি"
+                            text="নিভার পথচলা"
                             className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-header font-bold mb-3 sm:mb-4 md:mb-6 leading-none"
                         />
                         <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl font-body max-w-4xl">শিক্ষা থেকে শুরু করে সামাজিক কাজ এবং এখন রাজনৈতিক সেবায় নিয়োজিত</p>

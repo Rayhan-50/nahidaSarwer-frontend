@@ -71,9 +71,9 @@ const Navbar = () => {
               {/* Dropdown Content */}
               <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100">
                 <div className="py-2">
-                  <Link to="/about" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">আমাদের সম্পর্কে</Link>
-                  <Link to="/gallery" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">গ্যালারি</Link>
-                  <Link to="/contact" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">যোগাযোগ</Link>
+                  <Link to="/#about" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">আমাদের সম্পর্কে</Link>
+                  <Link to="/#gallery" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">গ্যালারি</Link>
+                  <Link to="/#contact" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">যোগাযোগ</Link>
                 </div>
               </div>
             </div>
@@ -128,9 +128,9 @@ const Navbar = () => {
               ))}
               <div className="border-t border-gray-200 pt-4">
                 <span className="block text-2xl font-header font-bold text-gray-500 mb-2">আরও</span>
-                <Link to="/about" onClick={() => setIsOpen(false)} className="block py-2 text-xl font-header text-black hover:text-brand-red pl-4">আমাদের সম্পর্কে</Link>
-                <Link to="/gallery" onClick={() => setIsOpen(false)} className="block py-2 text-xl font-header text-black hover:text-brand-red pl-4">গ্যালারি</Link>
-                <Link to="/contact" onClick={() => setIsOpen(false)} className="block py-2 text-xl font-header text-black hover:text-brand-red pl-4">যোগাযোগ</Link>
+                <Link to="/#about" onClick={() => setIsOpen(false)} className="block py-2 text-xl font-header text-black hover:text-brand-red pl-4">আমাদের সম্পর্কে</Link>
+                <Link to="/#gallery" onClick={() => setIsOpen(false)} className="block py-2 text-xl font-header text-black hover:text-brand-red pl-4">গ্যালারি</Link>
+                <Link to="/#contact" onClick={() => setIsOpen(false)} className="block py-2 text-xl font-header text-black hover:text-brand-red pl-4">যোগাযোগ</Link>
               </div>
 
               <div className="pt-6">

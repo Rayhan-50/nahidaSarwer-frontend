@@ -112,10 +112,12 @@ const CommunitySection = () => {
                     />
 
                     <p className="text-xl md:text-2xl lg:text-3xl text-white font-body leading-relaxed max-w-3xl text-right lg:text-right">
-                        নিভার প্রচারণা হাজারো মানুষের আস্থা অর্জন করেছে। <br className="hidden lg:block" />
+                        নিভার প্রচারণা হাজারো মানুষের আশা অর্জন করেছে। <br className="hidden lg:block" />
                         প্রতিদিন নতুন সমর্থক যুক্ত হচ্ছেন এই মহৎ উদ্যোগে। <br className="hidden lg:block" />
                         ঢাকা-১২ এর প্রতিটি কোণ থেকে মানুষ তাদের কণ্ঠস্বর <br className="hidden lg:block" />
                         উঠিয়েছেন।
+                        <br /><br />
+                        গত এক বছর নিজ কাজ করছেন জুলাই শহীদ পরিবারের, আহতের নিয়ে। জুলাই গণঅভ্যুত্থানে তাদের মতামত, জনতার দুয়ার দুয়ার। শুনছেন সবার কথা, দিচ্ছেন ছোঁয়া ও সমর্থন।
                     </p>
                 </div>
 

@@ -10,28 +10,28 @@ const ContactSection = () => {
             icon: Mail,
             title: 'ইমেইল',
             subtitle: 'আমাদের সাথে যোগাযোগ করুন',
-            link: 'niva@dhaka12.com',
-            href: 'mailto:niva@dhaka12.com'
+            link: 'nahidasarwer@gmail.com',
+            href: 'mailto:nahidasarwer@gmail.com'
         },
         {
             icon: MessageSquare,
             title: 'ফোন',
             subtitle: 'সরাসরি কথা বলুন',
-            link: '+৮৮ ০১৭ ১২৩৪ ৫৬৭৮',
-            href: 'tel:+8801712345678'
+            link: '01763210498',
+            href: 'tel:01763210498'
         },
         {
             icon: Phone,
             title: 'অফিস',
-            subtitle: 'ঢাকা-১২, পুরান ঢাকা, বাংলাদেশ',
-            link: '+৮৮ ০১৭ ১২৩৪ ৫৬৭৮',
-            href: 'tel:+8801712345678'
+            subtitle: 'ফার্মগেট',
+            link: '01763210498',
+            href: 'tel:01763210498'
         },
         {
             icon: MapPin,
             title: 'দপ্তর',
-            subtitle: 'ঢাকা-১২, পুরান ঢাকা, বাংলাদেশে আমাদের প্রধান কার্যালয় অবস্থিত।',
-            link: 'ঢাকা-১২, পুরান ঢাকা, বাংলাদেশ',
+            subtitle: 'ফার্মগেট, ঢাকা',
+            link: 'ফার্মগেট',
             href: '#'
         }
     ];

@@ -45,6 +45,49 @@ const NewsSection = () => {
         }
     ];
 
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [itemsPerView, setItemsPerView] = React.useState(1);
+    const [isPaused, setIsPaused] = React.useState(false);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setItemsPerView(3);
+            } else if (window.innerWidth >= 640) {
+                setItemsPerView(2);
+            } else {
+                setItemsPerView(1);
+            }
+        };
+
+        handleResize(); // Initial check
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    React.useEffect(() => {
+        if (isPaused) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % newsItems.length);
+        }, 2000); // 2 seconds per slide
+        return () => clearInterval(interval);
+    }, [newsItems.length, isPaused]);
+
+    const handleDragEnd = (event, info) => {
+        const threshold = 50; // minimum distance to swipe
+        if (info.offset.x < -threshold) {
+            // Swipe Left -> Next
+            setCurrentIndex((prev) => (prev + 1) % newsItems.length);
+        } else if (info.offset.x > threshold) {
+            // Swipe Right -> Previous
+            setCurrentIndex((prev) => (prev - 1 + newsItems.length) % newsItems.length);
+        }
+    };
+
+    // Ensure we don't show empty space at the end if possible, or just wrap around.
+    // For simple wrap around 0 -> length-1 -> 0, standard carousel logic is fine.
+
     return (
         <section className="relative w-full py-12 sm:py-14 md:py-16 lg:py-32 overflow-hidden">
             {/* Background Image */}
@@ -79,58 +122,62 @@ const NewsSection = () => {
                     </button>
                 </div>
 
-                {/* News Carousel (Auto Sliding) */}
+                {/* News Carousel (Auto Sliding Step by Step) */}
                 <div className="relative w-full overflow-hidden py-4 sm:py-6 md:py-10">
                     <motion.div
-                        className="flex gap-3 sm:gap-4 md:gap-8 cursor-grab active:cursor-grabbing w-max"
+                        className="flex gap-0"
+                        animate={{ x: `-${currentIndex * (100 / itemsPerView)}%` }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
                         drag="x"
-                        dragConstraints={{ left: -10000, right: 0 }}
-                        dragElastic={0.1}
-                        dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
-                        animate={{ x: ["0%", "-50%"] }}
-                        transition={{
-                            repeat: Infinity,
-                            ease: "linear",
-                            duration: 20
-                        }}
-                        whileTap={{ cursor: "grabbing" }}
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.2}
+                        onDragEnd={handleDragEnd}
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => setIsPaused(false)}
+                        onTouchStart={() => setIsPaused(true)}
+                        onTouchEnd={() => setIsPaused(false)}
                     >
-                        {/* Duplicate items for infinite loop */}
-                        {[...newsItems, ...newsItems, ...newsItems, ...newsItems].map((item, index) => (
-                            <div key={`${item.id}-${index}`} className="flex-shrink-0 min-w-[85vw] sm:min-w-[75vw] md:min-w-[450px] lg:min-w-[550px] xl:min-w-[600px] bg-white rounded-2xl sm:rounded-3xl md:rounded-[3rem] overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300">
-                                {/* Image */}
-                                <div className="relative h-40 sm:h-48 md:h-64 lg:h-80 overflow-hidden">
-                                    <img
-                                        draggable="false"
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 select-none"
-                                    />
-                                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 flex gap-2">
-                                        <span className="bg-white/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 md:px-4 md:py-2 rounded-lg md:rounded-xl text-xs sm:text-sm md:text-lg font-bold text-black">
-                                            {item.category}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="p-4 sm:p-5 md:p-8 lg:p-10">
-                                    <div className="flex items-center gap-1.5 sm:gap-2 text-gray-500 text-xs sm:text-sm md:text-lg mb-3 sm:mb-4 md:mb-6">
-                                        <Clock size={14} className="sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                                        <span>{item.readTime}</span>
+                        {newsItems.map((item, index) => (
+                            <div
+                                key={item.id}
+                                className="flex-shrink-0 px-2 sm:px-3"
+                                style={{ width: `${100 / itemsPerView}%` }}
+                            >
+                                <div className="w-full bg-white rounded-2xl sm:rounded-3xl md:rounded-[3rem] overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300">
+                                    {/* Image */}
+                                    <div className="relative h-48 sm:h-56 md:h-64 lg:h-80 overflow-hidden">
+                                        <img
+                                            draggable="false"
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 select-none"
+                                        />
+                                        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 flex gap-2">
+                                            <span className="bg-white/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 md:px-4 md:py-2 rounded-lg md:rounded-xl text-xs sm:text-sm md:text-lg font-bold text-black">
+                                                {item.category}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-header font-bold text-black mb-3 sm:mb-4 md:mb-6 leading-snug group-hover:text-[#00A651] transition-colors">
-                                        {item.title}
-                                    </h3>
+                                    {/* Content */}
+                                    <div className="p-4 sm:p-5 md:p-8 lg:p-10">
+                                        <div className="flex items-center gap-1.5 sm:gap-2 text-gray-500 text-xs sm:text-sm md:text-lg mb-3 sm:mb-4 md:mb-6">
+                                            <Clock size={14} className="sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                                            <span>{item.readTime}</span>
+                                        </div>
 
-                                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-5 md:mb-6 lg:mb-8 line-clamp-2 font-body">
-                                        {item.description}
-                                    </p>
+                                        <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-header font-bold text-black mb-3 sm:mb-4 md:mb-6 leading-snug group-hover:text-[#00A651] transition-colors line-clamp-2">
+                                            {item.title}
+                                        </h3>
 
-                                    <a href="#" className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-3 text-black text-sm sm:text-base md:text-lg lg:text-xl font-bold hover:text-[#FF4D50] transition-colors">
-                                        আরও পড়ুন <ArrowRight size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
-                                    </a>
+                                        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-5 md:mb-6 lg:mb-8 line-clamp-2 font-body">
+                                            {item.description}
+                                        </p>
+
+                                        <a href="#" className="inline-flex items-center gap-1.5 sm:gap-2 md:gap-3 text-black text-sm sm:text-base md:text-lg lg:text-xl font-bold hover:text-[#FF4D50] transition-colors">
+                                            আরও পড়ুন <ArrowRight size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         ))}

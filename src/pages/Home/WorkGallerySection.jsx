@@ -1,7 +1,7 @@
 import React from 'react';
 import TypingText from '../../Shared/TypingText';
 
-import image3 from '../../assets/images/vento_/image3.JPEG';
+import image3 from '../../assets/images/vento_/image3.jpg';
 import lfs05061 from '../../assets/images/vento_/LFS05061.JPG';
 import lfs05191 from '../../assets/images/vento_/LFS05191.JPG';
 import img0648 from '../../assets/images/vento_/IMG_0648.jpg';

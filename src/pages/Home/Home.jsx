@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Users, Heart, Award, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 import JourneySection from './JourneySection';
@@ -13,14 +13,52 @@ import ContactSection from './ContactSection';
 import Footer from '../../Shared/Footer/Footer';
 import TypingText from '../../Shared/TypingText';
 
-import heroImage from '../../assets/images/hero.jpeg';
+// import heroImage from '../../assets/images/hero.jpeg';
 import frame19 from '../../assets/images/section_2/frame_19.png';
 import nivaPoster from '../../assets/images/section_2/niva_poster.png';
 import nivaPortrait1 from '../../assets/images/section_2/niva_portrait_1.png';
 import image1 from '../../assets/images/section_2/image1.jpeg';
 
+const TextWithReadMore = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const text = "নিভা ঢাকা ইউনিভার্সিটির মাইক্রোবায়োলজি ডিপার্টমেন্ট থেকে অনার্স ও মাস্টার্স শেষ করেন। দীর্ঘদিন গবেষণার কাজে যুক্ত ছিলেন icddrb তে। ছোটবেলা থেকেই রাজনৈতিক কালচারের সাথে পরিচয়। ভার্সিটি জীবনে প্রায় সকল ধরণের আন্দোলনে যুক্ত ছিলেন। ২০১৮ এর কোটা আন্দোলন, নিরাপদ সড়ক আন্দোলন থেকে ছোটখাটো আরো শ-খানেক আন্দোলন, যা ২০২৪ এর জুলাই গণঅভ্যুত্থানের ভিত্তি তৈরী করে প্রায় তার সবগুলোতেই যুক্ত ছিলেন। গুরুতপূর্ন ভূমিকা রেখেছেন জুলাই গণঅভ্যুত্থানেও";
+
+  // Split into sentences (approximately) or just character count
+  // Using character count for simplicity to match "show first few lines"
+  const limit = 250;
+  const shouldTruncate = text.length > limit;
+  const displayText = isExpanded ? text : (shouldTruncate ? text.slice(0, limit) + '...' : text);
+
+  return (
+    <div className="flex flex-col items-start gap-4">
+      <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-black font-header font-medium leading-relaxed underline decoration-[#00A651] decoration-2 underline-offset-8">
+        {displayText}
+      </p>
+      {shouldTruncate && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="text-[#FF4D50] font-bold text-lg sm:text-xl md:text-2xl hover:underline"
+        >
+          {isExpanded ? "কম দেখুন" : "আরও পড়ুন"}
+        </button>
+      )}
+    </div>
+  );
+};
+
 const Home = () => {
+  const location = useLocation();
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (location.hash && scrollRef.current) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   const handleScroll = (e) => {
     const scrollTop = e.currentTarget.scrollTop;
@@ -40,7 +78,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImage})`,
+            backgroundImage: `url(https://res.cloudinary.com/duh7c5x99/image/upload/v1765347650/LFS05105_-_Reyad_Hossain_y2bo4c.jpg)`,
           }}
         >
           {/* Dark Overlay with Red/Maroon Tint */}
@@ -78,9 +116,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="text-lg sm:text-xl md:text-3xl lg:text-4xl text-white/90 max-w-4xl mx-auto font-body mb-12 drop-shadow-md leading-relaxed"
           >
-            নাহিদা সারোয়ার নিভা আপনার স্বপ্নের ঢাকা-১২ গড়তে প্রতিশ্রুতিবদ্ধ।
-            <br />
-            একটি আধুনিক, সুশৃঙ্খল ও উন্নত নগরী আমাদের লক্ষ্য।
+            আত্মমর্যাদা সম্পন্ন, সুস্থ, নিরাপদ ও আধুনিক জীবনই আমাদের লক্ষ্য
           </motion.p>
 
           {/* Buttons */}
@@ -96,40 +132,27 @@ const Home = () => {
                 <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out"></div>
               </button>
             </Link>
-            <button className="relative px-6 py-3 sm:px-8 sm:py-4 md:px-12 md:py-6 bg-transparent text-white rounded-full font-header text-xl sm:text-2xl md:text-6xl lg:text-8xl font-bold border-2 border-white overflow-hidden group shadow-2xl hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300">
-              <span className="relative z-10 group-hover:text-[#FF4D50] transition-colors duration-500">আরও জানুন</span>
-              <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out"></div>
-            </button>
+            <Link to="/#about">
+              <button className="relative px-6 py-3 sm:px-8 sm:py-4 md:px-12 md:py-6 bg-transparent text-white rounded-full font-header text-xl sm:text-2xl md:text-6xl lg:text-8xl font-bold border-2 border-white overflow-hidden group shadow-2xl hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300">
+                <span className="relative z-10 group-hover:text-[#FF4D50] transition-colors duration-500">আরও জানুন</span>
+                <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out"></div>
+              </button>
+            </Link>
           </motion.div>
 
-          {/* Bottom Tabs */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent pt-10 pb-6">
-            <div className="container mx-auto px-4">
-              <div className="flex justify-center gap-3 sm:gap-6 md:gap-12 lg:gap-16 border-b border-white/30 pb-4">
-                {['দৃষ্টিভঙ্গি', 'পরিকল্পনা', 'অগ্রগতি', 'সমর্থন'].map((item) => (
-                  <button
-                    key={item}
-                    className="text-white/70 hover:text-[#FF4D50] font-header text-sm sm:text-base md:text-xl lg:text-2xl font-bold transition-colors relative group pb-2"
-                  >
-                    {item}
-                    <span className="absolute bottom-[-17px] left-0 w-0 h-1 bg-[#FF4D50] transition-all duration-300 group-hover:w-full"></span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
+
         </div>
-      </section>
+      </section >
 
       {/* Introduction Section */}
-      <section className="relative w-full py-20 overflow-hidden bg-[#FEFFF6] min-h-screen flex items-center">
+      <section id="about" className="relative w-full py-20 overflow-hidden bg-[#FEFFF6] min-h-screen flex items-center">
         {/* Background Grid */}
-        <div
+        < div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100 pointer-events-none"
           style={{
             backgroundImage: `url(${frame19})`,
           }}
-        ></div>
+        ></div >
 
         <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10">
           {/* Header */}
@@ -176,68 +199,58 @@ const Home = () => {
 
               {/* Text Content */}
               <div className="space-y-6">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-black font-body font-medium leading-relaxed underline decoration-[#00A651] decoration-2 underline-offset-8">
-                  নিভা একজন সাধারণ মানুষ যিনি অসাধারণ কিছু করতে চান। ঢাকা-১২ এর প্রতিটি কোণে তার শেকড় রয়েছে, এবং এই শহরের মানুষের জন্য তার ভালোবাসা অসীম।
-                </p>
-
-                {/* Button */}
-                <div className="pt-4">
-                  <button className="group flex items-center gap-2 sm:gap-3 md:gap-4 px-6 py-2 sm:px-8 sm:py-3 md:px-12 md:py-4 bg-white border-2 border-black rounded-full font-header text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold hover:bg-black hover:text-white transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
-                    আরও
-                    <span className="text-base sm:text-lg md:text-xl lg:text-2xl">জানুন ›</span>
-                  </button>
-                </div>
+                <TextWithReadMore />
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Journey Section */}
-      <div>
+      < div >
         <JourneySection scrollContainerRef={scrollRef} />
-      </div>
+      </div >
 
       {/* Vision Section */}
-      <div>
+      < div >
         <VisionSection />
-      </div>
+      </div >
 
       {/* Community Section */}
-      <div>
+      < div >
         <CommunitySection />
-      </div>
+      </div >
 
       {/* Milestone Section */}
-      <div>
+      < div >
         <MilestoneSection />
-      </div>
+      </div >
 
       {/* Testimonial Section */}
-      <div>
+      < div >
         <TestimonialSection />
-      </div>
+      </div >
 
       {/* Work Gallery Section */}
-      <div>
+      <div id="gallery">
         <WorkGallerySection />
-      </div>
+      </div >
 
       {/* News Section */}
-      <div>
+      < div >
         <NewsSection />
-      </div>
+      </div >
 
       {/* Contact Section */}
-      <div>
+      <div id="contact">
         <ContactSection />
-      </div>
+      </div >
 
       {/* Footer */}
-      <div>
+      < div >
         <Footer />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import TypingText from '../../Shared/TypingText';
 
 import img0648 from '../../assets/images/long_/img_0648.jpg';
-import img1457 from '../../assets/images/long_/img_1457.jpg';
+import img1457 from '../../assets/images/long_/image_1457.jpg';
 import lfs05457 from '../../assets/images/long_/lfs05457.jpg';
 import whatsappImage from '../../assets/images/long_/whatsapp_image.jpeg';
 import frame27 from '../../assets/images/long_/frame_27.png';
@@ -10,30 +10,30 @@ import frame27 from '../../assets/images/long_/frame_27.png';
 const MilestoneSection = () => {
     const milestones = [
         {
-            year: '২০২৩',
-            title: 'যাত্রা শুরু',
-            description: 'প্রিয় ঢাকা-১২ এর মানুষের সাথে চলার পথে আমাদের পথচলা শুরু। প্রতিটি মানুষের ভালোবাসা আমাদের শক্তি।',
+            year: '২০১৮',
+            title: 'কোটা আন্দোলন',
+            description: 'ছাত্র-জনতার ন্যায্য অধিকার আদায়ে কোটা সংস্কার আন্দোলন।',
             image: img0648,
             align: 'right'
         },
         {
-            year: '২০২৪',
-            title: 'স্বপ্নজয় সংগঠন',
-            description: 'বিভিন্ন এলাকায় স্থানীয় নেতা ও সংগঠক নিয়োগ দেওয়া হয়েছে। তাদের মাধ্যমে প্রতিটি মানুষের সেবা করা হচ্ছে।',
+            year: '২০১৮',
+            title: 'নিরাপদ সড়ক আন্দোলন',
+            description: 'সড়কে শৃঙ্খলা ও নিরাপত্তার দাবিতে শিক্ষার্থীদের আন্দোলন।',
             image: img1457,
             align: 'left'
         },
         {
-            year: '২০২৪',
-            title: 'উন্নয়ন প্রকল্প',
-            description: 'শিক্ষা, স্বাস্থ্য ও অবকাঠামো উন্নয়নে ব্যাপক পদক্ষেপ নেওয়া হয়েছে। সাধারণ মানুষের জীবনমান উন্নয়নে আমরা বদ্ধপরিকর।',
+            year: '২০২০',
+            title: 'করোনায় মানুষের পাশে',
+            description: 'মহামারীর কঠিন সময়ে অসহায় মানুষের পাশে দাঁড়িয়েছেন নিরলসভাবে।',
             image: lfs05457,
             align: 'right'
         },
         {
-            year: 'চলমান',
-            title: 'ভবিষ্যৎ পরিকল্পনা',
-            description: 'আরও অনেক কিছু করার আছে। ঢাকা-১২ কে একটি আদর্শ ও আধুনিক নগরী হিসেবে গড়ে তোলাই আমাদের লক্ষ্য।',
+            year: '২০২৪',
+            title: 'জুলাই গণঅভ্যুত্থান',
+            description: 'স্বৈরাচার পতনে ছাত্র-জনতার সাথে একাত্ম হয়ে রাজপথে সোচ্চার ভূমিকা।',
             image: whatsappImage,
             align: 'left'
         }
@@ -56,7 +56,7 @@ const MilestoneSection = () => {
                     <span className="text-[#00A651] font-bold text-2xl sm:text-3xl md:text-4xl mb-4 block">অগ্রগতি</span>
                     <TypingText
                         tag="h2"
-                        text="আমাদের যাত্রা এবং মাইলফলক"
+                        text="আমাদের যাত্রা"
                         className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-header font-bold text-black mb-6"
                     />
                     <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-black/70 font-body max-w-5xl mx-auto leading-relaxed">
