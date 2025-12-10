@@ -5,8 +5,7 @@ import Footer from '../../Shared/Footer/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const bkashQr = "https://res.cloudinary.com/duh7c5x99/image/upload/v1765358194/513d55a7-4156-4bd8-86fd-34c2e255a99c_e4xn0m.jpg";
-import rocketQr from '../../assets/images/payment/rocket.jpg';
-import nagadQr from '../../assets/images/payment/nagad.png';
+
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const Donate = () => {
@@ -115,8 +114,7 @@ const Donate = () => {
     const getPaymentMethodName = (method) => {
         switch (method) {
             case 'bkash': return 'বিকাশ';
-            case 'nagad': return 'নগদ';
-            case 'rocket': return 'রকেট';
+
             case 'bank': return 'ব্যাংক ট্রান্সফার';
             default: return '';
         }
@@ -125,8 +123,7 @@ const Donate = () => {
     const getQrImage = (method) => {
         switch (method) {
             case 'bkash': return bkashQr;
-            case 'nagad': return nagadQr;
-            case 'rocket': return rocketQr;
+
             default: return null;
         }
     };
@@ -225,7 +222,7 @@ const Donate = () => {
                                     পেমেন্ট মেথড
                                 </h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                                    {['bkash', 'nagad', 'rocket', 'bank'].map((method) => (
+                                    {['bkash', 'bank'].map((method) => (
                                         <button
                                             key={method}
                                             onClick={() => setPaymentMethod(method)}
@@ -235,11 +232,10 @@ const Donate = () => {
                                                 }`}
                                         >
                                             <div className={`w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white font-bold text-xs md:text-base ${method === 'bkash' ? 'bg-[#E2136E]' :
-                                                method === 'nagad' ? 'bg-[#F6921E]' : 'bg-[#8C3494]'
+                                                method === 'bank' ? 'bg-[#8C3494]' : 'bg-[#E2136E]'
                                                 }`}>
                                                 {method === 'bkash' && 'bKash'}
-                                                {method === 'nagad' && 'Nagad'}
-                                                {method === 'rocket' && 'Rocket'}
+
                                                 {method === 'bank' && <CreditCard size={24} />}
                                             </div>
                                             <span className={`font-bold text-xl md:text-4xl ${paymentMethod === method ? 'text-[#FF4D50]' : 'text-gray-600'}`}>
@@ -276,6 +272,11 @@ const Donate = () => {
                                         <p className="text-4xl font-bold text-gray-700 leading-relaxed">
                                             QR কোড স্ক্যান করে <br /><span className="text-[#FF4D50]">{getPaymentMethodName(paymentMethod)}</span> এ পেমেন্ট করুন
                                         </p>
+                                        {paymentMethod === 'bkash' && (
+                                            <p className="text-2xl font-bold text-gray-800 mt-4">
+                                                বিকাশ পার্সোনাল: <span className="text-[#E2136E]">01852743060</span>
+                                            </p>
+                                        )}
                                         <p className="text-3xl text-gray-500 mt-6">অথবা ডায়াল করুন: *247#</p>
                                     </>
                                 )}
