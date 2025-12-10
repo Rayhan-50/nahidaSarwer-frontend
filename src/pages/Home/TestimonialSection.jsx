@@ -84,7 +84,7 @@ const TestimonialSection = () => {
                                 }}
                                 whileTap={{ cursor: "grabbing" }}
                             >
-                                {[...testimonials, ...testimonials].map((item, index) => (
+                                {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((item, index) => (
                                     <div
                                         key={index}
                                         className="flex-shrink-0 w-[280px] sm:w-[350px] md:w-[400px] lg:w-[450px] bg-white/10 backdrop-blur-sm p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-black/5 hover:bg-white/20 transition-colors duration-300 flex flex-col pointer-events-auto"
@@ -143,7 +143,7 @@ const TestimonialSection = () => {
                                 dragConstraints={{ left: -2000, right: 0 }}
                                 dragElastic={0.1}
                                 dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
-                                animate={{ x: "-50%" }}
+                                animate={{ x: ["0%", "-50%"] }}
                                 transition={{
                                     duration: 30,
                                     repeat: Infinity,
@@ -151,7 +151,7 @@ const TestimonialSection = () => {
                                 }}
                                 whileTap={{ cursor: "grabbing" }}
                             >
-                                {[...videos, ...videos].map((video, index) => (
+                                {[...videos, ...videos, ...videos, ...videos].map((video, index) => (
                                     <div key={index} className="w-[260px] sm:w-[320px] md:w-[400px] lg:w-[500px] xl:w-[600px] bg-white p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 rounded-xl sm:rounded-2xl md:rounded-[2rem] shadow-xl border border-gray-100 flex-shrink-0 flex flex-col pointer-events-auto">
                                         <div className="aspect-video w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden mb-3 sm:mb-4 md:mb-5 lg:mb-8 bg-black flex-shrink-0">
                                             <iframe

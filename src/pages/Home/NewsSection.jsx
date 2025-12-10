@@ -82,23 +82,29 @@ const NewsSection = () => {
                 {/* News Carousel (Auto Sliding) */}
                 <div className="relative w-full overflow-hidden py-4 sm:py-6 md:py-10">
                     <motion.div
-                        className="flex gap-3 sm:gap-4 md:gap-8"
+                        className="flex gap-3 sm:gap-4 md:gap-8 cursor-grab active:cursor-grabbing w-max"
+                        drag="x"
+                        dragConstraints={{ left: -10000, right: 0 }}
+                        dragElastic={0.1}
+                        dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
                         animate={{ x: ["0%", "-50%"] }}
                         transition={{
                             repeat: Infinity,
                             ease: "linear",
                             duration: 20
                         }}
+                        whileTap={{ cursor: "grabbing" }}
                     >
                         {/* Duplicate items for infinite loop */}
-                        {[...newsItems, ...newsItems, ...newsItems].map((item, index) => (
-                            <div key={`${item.id}-${index}`} className="min-w-[85vw] sm:min-w-[75vw] md:min-w-[450px] lg:min-w-[550px] xl:min-w-[600px] bg-white rounded-2xl sm:rounded-3xl md:rounded-[3rem] overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300">
+                        {[...newsItems, ...newsItems, ...newsItems, ...newsItems].map((item, index) => (
+                            <div key={`${item.id}-${index}`} className="flex-shrink-0 min-w-[85vw] sm:min-w-[75vw] md:min-w-[450px] lg:min-w-[550px] xl:min-w-[600px] bg-white rounded-2xl sm:rounded-3xl md:rounded-[3rem] overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300">
                                 {/* Image */}
                                 <div className="relative h-40 sm:h-48 md:h-64 lg:h-80 overflow-hidden">
                                     <img
+                                        draggable="false"
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 select-none"
                                     />
                                     <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 flex gap-2">
                                         <span className="bg-white/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 md:px-4 md:py-2 rounded-lg md:rounded-xl text-xs sm:text-sm md:text-lg font-bold text-black">
