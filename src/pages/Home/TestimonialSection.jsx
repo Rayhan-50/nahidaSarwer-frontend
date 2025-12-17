@@ -54,7 +54,7 @@ const TestimonialSection = () => {
                         className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-header font-bold text-[#006838] mb-4 sm:mb-6"
                     />
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-black font-body max-w-4xl leading-relaxed">
-                        সাধারণ নাগরিক থেকে শুরু করে স্থানীয় নেতারা সবাই নিভার প্রতিশ্রুতিতে বিশ্বাস করেন।
+
                     </p>
                 </div>
 

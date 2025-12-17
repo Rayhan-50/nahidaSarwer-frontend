@@ -49,7 +49,7 @@ const VisionSection = () => {
                             <TypingText tag="h2" text="স্পষ্ট" />
                         </div>
                         <p className="text-lg md:text-xl lg:text-2xl text-black/80 font-body leading-relaxed mb-8 md:mb-12 max-w-2xl">
-                            ঢাকা-১২ কে আধুনিক, সুশৃঙ্খল ও উন্নত নগরী হিসেবে গড়ে তোলা আমাদের প্রধান লক্ষ্য।
+                            আত্মমর্যাদা সম্পন্ন, সুস্থ, নিরাপদ ও আধুনিক জীবনই আমাদের লক্ষ্য
                         </p>
 
                         {/* Button removed as per user request */}

@@ -35,7 +35,7 @@ const WorkGallerySection = () => {
                         className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-header font-bold text-[#00A651] mb-4 sm:mb-6 md:mb-8 leading-none"
                     />
                     <p className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-white font-body max-w-6xl mx-auto leading-relaxed">
-                        ঢাকা-১২ এর রূপান্তরের প্রতিটি মুহূর্ত এখানে ধরা আছে।
+
                     </p>
                 </div>
 

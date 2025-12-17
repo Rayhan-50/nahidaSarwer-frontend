@@ -13,7 +13,7 @@ const MilestoneSection = () => {
             year: '২০১৮',
             title: 'কোটা আন্দোলন',
             description: 'ছাত্র-জনতার ন্যায্য অধিকার আদায়ে কোটা সংস্কার আন্দোলন।',
-            image: img0648,
+            image: 'https://res.cloudinary.com/dhmk5cy3r/image/upload/v1765978393/quta_ms6tia.jpg',
             align: 'right'
         },
         {
@@ -27,14 +27,14 @@ const MilestoneSection = () => {
             year: '২০২০',
             title: 'করোনায় মানুষের পাশে',
             description: 'মহামারীর কঠিন সময়ে অসহায় মানুষের পাশে দাঁড়িয়েছেন নিরলসভাবে।',
-            image: lfs05457,
+            image: 'https://res.cloudinary.com/dhmk5cy3r/image/upload/v1765978383/q3_yok20e.webp',
             align: 'right'
         },
         {
             year: '২০২৪',
             title: 'জুলাই গণঅভ্যুত্থান',
             description: 'স্বৈরাচার পতনে ছাত্র-জনতার সাথে একাত্ম হয়ে রাজপথে সোচ্চার ভূমিকা।',
-            image: whatsappImage,
+            image: 'https://res.cloudinary.com/dhmk5cy3r/image/upload/v1765978386/4_ct2pmj.webp',
             align: 'left'
         }
     ];
@@ -60,8 +60,7 @@ const MilestoneSection = () => {
                         className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-header font-bold text-black mb-6"
                     />
                     <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-black/70 font-body max-w-5xl mx-auto leading-relaxed">
-                        প্রতিটি পদক্ষেপ মানুষের হৃদয়ের দিকে এগিয়ে নিয়ে যায় আমাদের। <br />
-                        বিশ্বাস করি ধৈর্য ও নিষ্ঠার মাধ্যমে সবকিছু সম্ভব।
+
                     </p>
                 </div>
 
@@ -100,9 +99,7 @@ const MilestoneSection = () => {
                                             <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-black/80 font-body leading-relaxed mb-4 sm:mb-6">
                                                 {item.description}
                                             </p>
-                                            <button className="px-4 py-1.5 sm:px-6 sm:py-2 border border-black rounded-full text-xs sm:text-sm font-bold hover:bg-black hover:text-white transition-colors">
-                                                আরও জানুন ›
-                                            </button>
+
                                         </div>
 
                                         {/* Image */}

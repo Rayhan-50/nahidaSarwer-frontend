@@ -18,7 +18,7 @@ const JourneySection = ({ scrollContainerRef }) => {
             verticalText: 'কোটা আন্দোলন',
             title: '২০১৮ কোটা আন্দোলন',
             description: 'ছাত্র-জনতার ন্যায্য অধিকার আদায়ে কোটা সংস্কার আন্দোলন।',
-            image: img0648
+            image: 'https://res.cloudinary.com/dhmk5cy3r/image/upload/v1765978393/quta_ms6tia.jpg'
         },
         {
             id: '০২',
@@ -32,14 +32,14 @@ const JourneySection = ({ scrollContainerRef }) => {
             verticalText: 'করোনাকাল',
             title: '২০২০ করোনায় মানুষের পাশে',
             description: 'মহামারীর কঠিন সময়ে অসহায় মানুষের পাশে দাঁড়িয়েছেন নিরলসভাবে।',
-            image: lfs05457
+            image: 'https://res.cloudinary.com/dhmk5cy3r/image/upload/v1765978383/q3_yok20e.webp'
         },
         {
             id: '০৪',
             verticalText: 'গণঅভ্যুত্থান',
             title: '২০২৪ জুলাই গণঅভ্যুত্থান',
             description: 'স্বৈরাচার পতনে ছাত্র-জনতার সাথে একাত্ম হয়ে রাজপথে সোচ্চার ভূমিকা।',
-            image: whatsappImage
+            image: 'https://res.cloudinary.com/dhmk5cy3r/image/upload/v1765978386/4_ct2pmj.webp'
         }
     ];
 
@@ -99,7 +99,7 @@ const JourneySection = ({ scrollContainerRef }) => {
                             text="নিভার পথচলা"
                             className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-header font-bold mb-3 sm:mb-4 md:mb-6 leading-none"
                         />
-                        <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl font-body max-w-4xl">শিক্ষা থেকে শুরু করে সামাজিক কাজ এবং এখন রাজনৈতিক সেবায় নিয়োজিত</p>
+                        <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl font-body max-w-4xl"></p>
                     </div>
 
                     <div className="flex-1 flex items-center w-full min-h-0">
