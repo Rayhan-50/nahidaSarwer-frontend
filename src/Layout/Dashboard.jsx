@@ -13,7 +13,8 @@ import {
   Video,
   MessageSquare,
   Star,
-  BarChart3
+  BarChart3,
+  Newspaper
 } from "lucide-react";
 import Swal from "sweetalert2";
 
@@ -137,6 +138,7 @@ const Dashboard = () => {
                   {renderNavLink("/dashboard/manage-users", <Users className="h-4 w-4 sm:h-5 sm:w-5" />, "Manage Users")}
 
                   {renderNavLink("/dashboard/donations", <HeartHandshake className="h-4 w-4 sm:h-5 sm:w-5" />, "All Donations")}
+                  {renderNavLink("/dashboard/manage-news", <Newspaper className="h-4 w-4 sm:h-5 sm:w-5" />, "Manage News")}
                   {renderNavLink("/dashboard/add-videos", <Video className="h-4 w-4 sm:h-5 sm:w-5" />, "Add Videos")}
                   {renderNavLink("/dashboard/manage-stats", <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5" />, "Manage Stats")}
                   {renderNavLink("/dashboard/feedback", <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5" />, "Community Feedback")}
