@@ -292,7 +292,7 @@ const ManageStats = () => {
                     <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-[#FFA46F]/20 h-fit">
                         <h3 className="text-xl font-bold text-[#FF4D50] mb-6 flex items-center gap-2">
                             <Plus size={24} />
-                            নতুন খরচ যুক্ত করুন
+                            নতুন খরচ যুক্ত করুন (Admin)
                         </h3>
                         <form onSubmit={handleAddExpense} className="space-y-6">
                             <div className="space-y-2">
