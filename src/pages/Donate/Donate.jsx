@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const bkashQr = "https://res.cloudinary.com/duh7c5x99/image/upload/v1765358194/513d55a7-4156-4bd8-86fd-34c2e255a99c_e4xn0m.jpg";
 
-import useAxiosPublic from '../../hooks/useAxiosPublic';
+import useAxiosPublic from '../../hooks/UseAxiosPublic';
 import ExpenseTracker from '../../components/ExpenseTracker';
 
 const Donate = () => {
@@ -160,8 +160,8 @@ const Donate = () => {
             </section>
 
             {/* Tab Navigation */}
-            <div className="flex justify-center mb-10 relative z-20">
-                <div className="flex items-center gap-4">
+            <div className="flex justify-center mt-8 mb-10 relative z-20">
+                <div className="flex items-center gap-4 ">
                     {/* Donate Tab */}
                     <button
                         onClick={() => setActiveTab('donate')}
@@ -461,3 +461,5 @@ const Donate = () => {
     );
 };
 export default Donate;
+
+
