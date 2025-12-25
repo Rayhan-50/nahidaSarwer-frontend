@@ -5,8 +5,9 @@ import TypingText from '../../Shared/TypingText';
 
 import frame19 from '../../assets/images/section_2/frame_19.png';
 
-import useAxiosPublic from '../../hooks/useAxiosPublic';
+
 import { useQuery } from '@tanstack/react-query';
+import useAxiosPublic from '../../hooks/UseAxiosPublic';
 
 const NewsSection = () => {
     const axiosPublic = useAxiosPublic();
@@ -28,7 +29,7 @@ const NewsSection = () => {
         }
     });
 
-    const newsLink = stats.newsLink || "https://www.prothomalo.com/world";
+    const newsLink = "https://www.nationalcitizenpartybd.com/";
 
     const displayItems = newsItems.slice(0, 3);
 
