@@ -26,8 +26,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'হোম', href: '/', isExternal: false },
-    { name: 'সমর্থন করুন', href: '/supporters', isExternal: false },
-    { name: 'ডোনেট', href: '/donate', isExternal: false },
+    { name: 'নিজ সম্পর্কে', href: '/about', isExternal: false },
+    { name: 'সমর্থকবৃন্দ', href: '/supporters', isExternal: false },
+    { name: 'অনুদান', href: '/donate', isExternal: false },
+    { name: 'লগইন', href: '/login', isExternal: false },
   ];
 
   const handleLogout = () => {
@@ -61,27 +63,11 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-
-            {/* More Dropdown */}
-            <div className="relative group cursor-pointer">
-              <div className="flex items-center gap-1 text-black hover:text-brand-red transition-colors duration-300 font-header text-2xl font-bold">
-                <span>আরও</span>
-                <ChevronDown size={20} />
-              </div>
-              {/* Dropdown Content */}
-              <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100">
-                <div className="py-2">
-                  <Link to="/#about" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">আমাদের সম্পর্কে</Link>
-                  <Link to="/#gallery" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">গ্যালারি</Link>
-                  <Link to="/#contact" className="block px-4 py-2 text-lg font-header text-gray-800 hover:bg-brand-orange/10 hover:text-brand-orange">যোগাযোগ</Link>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Action Button */}
+          {/* Action Button - Only show Dashboard/Logout if logged in, otherwise nothing (since Login is now a nav item) */}
           <div className="hidden lg:block">
-            {user ? (
+            {user && (
               <div className="flex items-center gap-4">
                 <Link to="/dashboard" className="font-header text-lg font-bold text-black hover:text-brand-red">ড্যাশবোর্ড</Link>
                 <button
@@ -91,13 +77,6 @@ const Navbar = () => {
                   লগ আউট
                 </button>
               </div>
-            ) : (
-              <Link
-                to="/donate"
-                className="bg-black text-white font-header text-2xl font-bold px-10 py-3 rounded-full shadow-[4px_4px_0px_0px_#FF4D50] hover:shadow-[2px_2px_0px_0px_#FF4D50] hover:translate-y-[2px] transition-all duration-200 inline-block"
-              >
-                ডোনেট করুন
-              </Link>
             )}
           </div>
 

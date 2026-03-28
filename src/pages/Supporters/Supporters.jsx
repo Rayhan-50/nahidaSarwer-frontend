@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Send, MessageSquare, AlertCircle, ThumbsUp, ArrowRight, ChevronRight } from 'lucide-react';
-import useAxiosPublic from '../../hooks/useAxiosPublic';
+
 import { useQuery } from '@tanstack/react-query';
 
 import { motion } from 'framer-motion';
@@ -12,6 +12,8 @@ import frame16 from '../../assets/frame_16.svg';
 import frame24 from '../../assets/images/supporter_img/frame_24.png';
 import frame20 from '../../assets/images/3rd/frame_20.png';
 import frame19 from '../../assets/images/section_2/frame_19.png';
+import useAxiosPublic from '../../hooks/UseAxiosPublic';
+
 
 const Supporters = () => {
     const [activeTab, setActiveTab] = React.useState('manifesto'); // 'comment', 'manifesto', 'support'

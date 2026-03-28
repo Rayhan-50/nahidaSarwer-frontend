@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
-import useAxiosPublic from '../../hooks/useAxiosPublic';
+
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import { Trash2, Edit, FileText, Link, Calendar, Clock, Layers, Plus } from 'lucide-react';
 import Loading from '../../components/Loading/Loading';
+import useAxiosPublic from '../../hooks/UseAxiosPublic';
 
 const ManageNews = () => {
     const axiosSecure = useAxiosSecure();

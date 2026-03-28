@@ -4,7 +4,8 @@ import useAuth from "./useAuth";
 
 // Create Axios instance
 const AxiosSecure = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://sarwar-server.vercel.app/",
+  // baseURL: "http://localhost:5000",
+  baseURL: "https://sarwar-server.vercel.app/",  
 
 });
 
